@@ -15,7 +15,7 @@ export const ContextAppProvider = (props) => {
   const value = {hasUser, loading, user};
 
   useEffect(() => {
-    const token = Cookies.get(COOKIE_LOGIN);
+    const token = JSON.parse(Cookies.get(COOKIE_LOGIN));
     const handleUserErr = (err) => {
       console.error('An error occured while logging in users');
       console.error(err);
